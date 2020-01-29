@@ -182,7 +182,10 @@ open class NumberInputTextField: StylizedTextField {
         guard let textRange = textField.textRange(from: rangeStart, to: rangeEnd) else {
             return nil
         }
-        
+        guard let textInRange = textField.text(in: textRange) else {
+            return textField.firstRect(for: textRange)
+        }
+        textField.text = textField.text?.replacingOccurrences(of: textInRange, with: "*\(textInRange)")
         return textField.firstRect(for: textRange)
     }
     

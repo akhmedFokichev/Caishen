@@ -27,6 +27,7 @@ extension CardTextField {
      Moves the full card number input field to inside the screen with an animation of the duration `viewAnimationDuration`. At the same time, the card detail (expiration month and year and CVC) slide outside the view.
      */
     @objc open func moveCardNumberInAnimated() {
+        self.numberInputTextField.text = self.numberInputTextField.text?.replacingOccurrences(of: "*", with: "")
         UIView.animate(withDuration: viewAnimationDuration, animations: { [weak self] in
             self?.moveCardNumberIn()
             })
