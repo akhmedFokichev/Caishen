@@ -18,7 +18,7 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
     open weak var cardInfoTextFieldDelegate: CardInfoTextFieldDelegate?
     
     open func textFieldDidBeginEditing(_ textField: UITextField) {
-        if (textField.text ?? "").isEmpty {
+        if (textField.text ?? "").isEmpty && !textField.isSecureTextEntry {
             textField.text = UITextField.emptyTextFieldCharacter
         }
     }
@@ -28,7 +28,9 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
         
         let deletingLastCharacter = !(textField.text ?? "").isEmpty && textField.text != UITextField.emptyTextFieldCharacter && newText.isEmpty
         if deletingLastCharacter {
-            textField.text = UITextField.emptyTextFieldCharacter
+            if !textField.isSecureTextEntry {
+                textField.text = UITextField.emptyTextFieldCharacter
+            }
             cardInfoTextFieldDelegate?.textField(self, didEnterPartiallyValidInfo: newText)
             return false
         }
