@@ -30,6 +30,8 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
         if deletingLastCharacter {
             if !textField.isSecureTextEntry {
                 textField.text = UITextField.emptyTextFieldCharacter
+            } else {
+                textField.text = ""
             }
             cardInfoTextFieldDelegate?.textField(self, didEnterPartiallyValidInfo: newText)
             return false
