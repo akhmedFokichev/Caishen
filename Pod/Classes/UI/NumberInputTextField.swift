@@ -22,7 +22,7 @@ open class NumberInputTextField: StylizedTextField {
      - note: This card number may be incomplete and invalid while the user is entering a card number. Be sure to validate it against a proper card type before assuming it is valid.
      */
     open var cardNumber: Number {
-        let textFieldTextUnformatted = cardNumberFormatter.unformat(cardNumber: text ?? "")
+        let textFieldTextUnformatted = cardNumberFormatter.unformat(cardNumber: text ?? "").replacingOccurrences(of: "*", with: "")
         return Number(rawValue: textFieldTextUnformatted)
     }
     
@@ -185,7 +185,11 @@ open class NumberInputTextField: StylizedTextField {
         guard let textInRange = textField.text(in: textRange) else {
             return textField.firstRect(for: textRange)
         }
-        textField.text = textField.text?.replacingOccurrences(of: textInRange, with: "*\(textInRange)")
+        if let components = textField.text?.components(separatedBy: " ") {
+            var _components = components
+            _components[components.count - 1] = "*\(textInRange)"
+            textField.text = _components.joined(separator: " ")
+        }
         return textField.firstRect(for: textRange)
     }
     
@@ -201,7 +205,6 @@ open class NumberInputTextField: StylizedTextField {
         guard let textLength = text?.count else {
             return nil
         }
-        
         return rectFor(range: NSMakeRange(textLength - lastGroupLength, lastGroupLength), in: self)
     }
     
