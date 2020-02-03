@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -62,7 +62,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVC" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOM-PC-B5m" customClass="CVCInputTextField" customModule="Caishen" customModuleProvider="target">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVV" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOM-PC-B5m" customClass="CVCInputTextField" customModule="Caishen" customModuleProvider="target">
                                     <rect key="frame" x="216" y="0.0" width="136" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <accessibility key="accessibilityConfiguration" label="Card Verification Code"/>
@@ -108,7 +108,7 @@
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="8iN-aK-Jz9" secondAttribute="bottom" id="2qC-nH-TOb"/>
-                        <constraint firstItem="T6o-6e-fLS" firstAttribute="trailing" secondItem="8iN-aK-Jz9" secondAttribute="trailing" constant="4" id="2wV-fp-QSh"/>
+                        <constraint firstItem="T6o-6e-fLS" firstAttribute="trailing" secondItem="8iN-aK-Jz9" secondAttribute="trailing" constant="20" id="2wV-fp-QSh"/>
                         <constraint firstItem="T6o-6e-fLS" firstAttribute="top" secondItem="UFG-yT-gmg" secondAttribute="top" id="33E-7t-cqB"/>
                         <constraint firstAttribute="trailing" secondItem="8iN-aK-Jz9" secondAttribute="trailing" id="3nI-Om-zhN"/>
                         <constraint firstAttribute="bottom" secondItem="T6o-6e-fLS" secondAttribute="bottom" id="5A1-86-yL3"/>
@@ -132,7 +132,7 @@
                     <rect key="frame" x="1" y="2" width="30" height="892"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="fmD-Za-Tve"/>
+                        <constraint firstAttribute="width" constant="22" id="fmD-Za-Tve"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
