@@ -43,6 +43,8 @@ public protocol CardTextFieldDelegate: class {
      - returns: The accessibility label for its accessory button
      */
     func cardTextFieldShouldProvideAccessoryButtonAccessibilityLabel(_ cardTextField: CardTextField) -> String?
+    
+    func cardTextFieldActiveField(_ cardTextField: UITextField)
 }
 
 public extension CardTextFieldDelegate {

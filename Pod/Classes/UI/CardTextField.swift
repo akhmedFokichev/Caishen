@@ -520,6 +520,9 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
         }
     }
     
+    public func numberInputIsInFocus(_ textField: UITextField) {
+        cardTextFieldDelegate?.cardTextFieldActiveField(textField)
+    }
     // MARK: - Card 
     
     /**
@@ -528,8 +531,9 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
     @objc internal func showCardImage() {
         let cardType = cardTypeRegister.cardType(for: numberInputTextField.cardNumber)
         let cardTypeImage = cardTypeImageStore.image(for: cardType)
-
-        cardImageView?.image = cardTypeImage
+        if !(numberInputTextField.text?.isEmpty ?? false) {
+            cardImageView?.image = cardTypeImage
+        }
     }
     
     /**

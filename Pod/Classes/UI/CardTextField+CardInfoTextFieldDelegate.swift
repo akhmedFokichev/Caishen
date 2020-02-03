@@ -9,7 +9,11 @@
 import UIKit
 
 extension CardTextField: CardInfoTextFieldDelegate {
-
+    
+    public func textFieldIsInFocus(_ textField: UITextField) {
+        cardTextFieldDelegate?.cardTextFieldActiveField(textField)
+    }
+    
     open func textField(_ textField: UITextField, didEnterValidInfo: String) {
         updateNumberColor()
         notifyDelegate()

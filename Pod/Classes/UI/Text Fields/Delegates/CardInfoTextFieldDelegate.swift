@@ -37,4 +37,5 @@ public protocol CardInfoTextFieldDelegate {
      - parameter overFlowDigits: The overflow of text which does not fit into `textField` and might be entered into the next receiver in the responder chain.
      */
     func textField(_ textField: UITextField, didEnterOverflowInfo overFlowDigits: String)
+    func textFieldIsInFocus(_ textField: UITextField)
 }

@@ -21,6 +21,7 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
         if (textField.text ?? "").isEmpty && !textField.isSecureTextEntry {
             textField.text = UITextField.emptyTextFieldCharacter
         }
+        cardInfoTextFieldDelegate?.textFieldIsInFocus(textField)
     }
     
     open override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

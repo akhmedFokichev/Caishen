@@ -24,4 +24,5 @@ public protocol NumberInputTextFieldDelegate {
      - parameter numberInputTextField: The `NumberInputTextField` whose text was changed.
      */
     func numberInputTextFieldDidChangeText(_ numberInputTextField: NumberInputTextField)
+    func numberInputIsInFocus(_ textField: UITextField)
 }
