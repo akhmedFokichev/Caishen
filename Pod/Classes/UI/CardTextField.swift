@@ -289,10 +289,10 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
         
         cardImageView?.image = cardTypeImageStore.image(for: UnknownCardType())
         cardImageView?.layer.cornerRadius = 5.0
-        cardImageView?.layer.shadowColor = UIColor.black.cgColor
-        cardImageView?.layer.shadowRadius = 2
-        cardImageView?.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cardImageView?.layer.shadowOpacity = 0.2
+//        cardImageView?.layer.shadowColor = UIColor.black.cgColor
+//        cardImageView?.layer.shadowRadius = 2
+//        cardImageView?.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        cardImageView?.layer.shadowOpacity = 0.2
         
         imageViewLeadingConstraint?.constant = imageViewLeadingInset
         imageViewTrailingConstraint?.constant = imageViewTrailingInset
