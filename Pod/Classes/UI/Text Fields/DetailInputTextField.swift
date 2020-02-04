@@ -21,13 +21,19 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
         if (textField.text ?? "").isEmpty && !textField.isSecureTextEntry {
             textField.text = UITextField.emptyTextFieldCharacter
         }
+        if textField is MonthInputTextField {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .right
+            textField.typingAttributes = [NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        }
         cardInfoTextFieldDelegate?.textFieldIsInFocus(textField)
     }
-    
+
     open override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newText = NSString(string: (textField.text ?? "")).replacingCharacters(in: range, with: string).replacingOccurrences(of: UITextField.emptyTextFieldCharacter, with: "")
         
         let deletingLastCharacter = !(textField.text ?? "").isEmpty && textField.text != UITextField.emptyTextFieldCharacter && newText.isEmpty
+        
         if deletingLastCharacter {
             if !textField.isSecureTextEntry {
                 textField.text = UITextField.emptyTextFieldCharacter
@@ -37,11 +43,9 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
             cardInfoTextFieldDelegate?.textField(self, didEnterPartiallyValidInfo: newText)
             return false
         }
-        
         let autoCompletedNewText = autocomplete(newText)
         
         let (currentTextFieldText, overflowTextFieldText) = split(autoCompletedNewText)
-        
         if isInputValid(currentTextFieldText, partiallyValid: true) {
             textField.text = currentTextFieldText
             if isInputValid(currentTextFieldText, partiallyValid: false) {

@@ -139,7 +139,12 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
             accessoryButtonLeadingConstraint?.constant = accessoryButtonLeadingInset
         }
     }
-    
+    @IBOutlet weak var accessoryWidthConstraint: NSLayoutConstraint?
+    open var accessoryButtonWidth: CGFloat = 25.0 {
+        didSet {
+            accessoryWidthConstraint?.constant = accessoryButtonWidth
+        }
+    }
     /**
      Inset after the card type image view. Defaults to 5.0.
      */
@@ -331,8 +336,7 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
      */
     private func setupTextFieldAttributes() {
         numberInputTextField?.cardNumberSeparator = cardNumberSeparator ?? " - "
-        numberInputTextField?.placeholder = placeholder
-        
+        numberInputTextField?.placeholder = placeholder        
         cvcTextField?.deleteBackwardCallback = { [weak self] _ in
             if self?.hideExpiryTextFields == true {
                 self?.numberInputTextField.becomeFirstResponder()
