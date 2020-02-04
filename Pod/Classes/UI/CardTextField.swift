@@ -358,8 +358,8 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
             cvcTextField.textAlignment = .left
             monthTextField.textAlignment = .left
         } else {
-            cvcTextField.textAlignment = .right
-            monthTextField.textAlignment = .right
+            cvcTextField.textAlignment = .left
+            monthTextField.textAlignment = .left
         }
         
         let textFields: [UITextField?] = [numberInputTextField, cvcTextField, monthTextField, yearTextField]
