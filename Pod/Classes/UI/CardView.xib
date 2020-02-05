@@ -71,7 +71,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ГГ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgE-Em-qHJ" customClass="YearInputTextField" customModule="Caishen" customModuleProvider="target">
-                                    <rect key="frame" x="187" y="0.0" width="37" height="892"/>
+                                    <rect key="frame" x="190" y="0.0" width="37" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <accessibility key="accessibilityConfiguration" label="Expiration Year"/>
                                     <constraints>
@@ -90,9 +90,9 @@
                                 <constraint firstItem="CgE-Em-qHJ" firstAttribute="height" secondItem="8iN-aK-Jz9" secondAttribute="height" id="S9Q-tZ-J9h"/>
                                 <constraint firstAttribute="bottom" secondItem="5cX-Z5-afy" secondAttribute="bottom" id="XM4-dt-rH1"/>
                                 <constraint firstItem="5cX-Z5-afy" firstAttribute="centerY" secondItem="DD8-kX-0ru" secondAttribute="centerY" id="gPj-h0-kbB"/>
-                                <constraint firstItem="CgE-Em-qHJ" firstAttribute="leading" secondItem="DD8-kX-0ru" secondAttribute="trailing" id="mqG-6S-dv0"/>
+                                <constraint firstItem="CgE-Em-qHJ" firstAttribute="leading" secondItem="DD8-kX-0ru" secondAttribute="trailing" constant="3" id="mqG-6S-dv0"/>
                                 <constraint firstItem="HOM-PC-B5m" firstAttribute="top" secondItem="8iN-aK-Jz9" secondAttribute="top" id="pKk-pg-dWg"/>
-                                <constraint firstItem="5cX-Z5-afy" firstAttribute="centerY" secondItem="8iN-aK-Jz9" secondAttribute="centerY" constant="-10" id="xCX-AH-Opc"/>
+                                <constraint firstItem="5cX-Z5-afy" firstAttribute="centerY" secondItem="8iN-aK-Jz9" secondAttribute="centerY" constant="-12" id="xCX-AH-Opc"/>
                                 <constraint firstItem="DD8-kX-0ru" firstAttribute="leading" secondItem="5cX-Z5-afy" secondAttribute="trailing" id="yCR-Mr-RWe"/>
                             </constraints>
                         </view>

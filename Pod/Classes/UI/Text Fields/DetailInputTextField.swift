@@ -21,11 +21,15 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
         if (textField.text ?? "").isEmpty && !textField.isSecureTextEntry {
             textField.text = UITextField.emptyTextFieldCharacter
         }
-        if textField is MonthInputTextField {
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .right
-            textField.typingAttributes = [NSAttributedString.Key.paragraphStyle: paragraphStyle]
-        }
+//        if textField is MonthInputTextField {
+//            let paragraphStyle = NSMutableParagraphStyle()
+//            if textField.text?.count == 2 {
+//                paragraphStyle.alignment = .left
+//            } else {
+//                paragraphStyle.alignment = .right
+//            }
+//            textField.typingAttributes = [NSAttributedString.Key.paragraphStyle: paragraphStyle]
+//        }
         cardInfoTextFieldDelegate?.textFieldIsInFocus(textField)
     }
 
@@ -44,7 +48,6 @@ open class DetailInputTextField: StylizedTextField, TextFieldValidation, AutoCom
             return false
         }
         let autoCompletedNewText = autocomplete(newText)
-        
         let (currentTextFieldText, overflowTextFieldText) = split(autoCompletedNewText)
         if isInputValid(currentTextFieldText, partiallyValid: true) {
             textField.text = currentTextFieldText
