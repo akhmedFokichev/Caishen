@@ -163,14 +163,54 @@ extension CardType {
 
         let currentDate = Date()
         let expiryDate = expiry.rawValue
+        let lastNumbersOfYear = Int(String(expiry.year).dropFirst(2)) ?? 0
+        let expString = String(format: "%02i/%02i", arguments: [expiry.month, lastNumbersOfYear])
 
         if expiryDate.timeIntervalSince1970 < currentDate.timeIntervalSince1970 {
             return CardValidationResult.CardExpired
+        } else if !isExpDateValid(expDateString: expString) {
+            return CardValidationResult.InvalidExpiry
         } else {
             return CardValidationResult.Valid
         }
     }
+    
+    func isExpDateValid(expDateString: String) -> Bool {
+        
+        if expDateString.count != 5 {
+            return false;
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yy"
+        guard let date = dateFormatter.date(from: expDateString) else {
+            return false
+        }
+        // get last day of the current month
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone.current
 
+        let dayRange = calendar.range(of: .day, in: .month, for: date)
+
+        let numberOfDaysInCurrentMonth = dayRange?.count
+        var comp = calendar.dateComponents([Calendar.Component.year,Calendar.Component.month,Calendar.Component.day], from: date)
+
+        comp.day = numberOfDaysInCurrentMonth;
+        comp.hour = 24;
+        comp.minute = 0;
+        comp.second = 0;
+
+        guard let _date = calendar.date(from: comp) else {
+            return false
+        }
+        
+        let now = Date()
+        if _date.compare(now) == .orderedDescending {
+            return true
+        }
+        
+        return false;
+    }
     /**
      You can implicitly set this property by providing `numberGrouping` when implementing this protocol.
      

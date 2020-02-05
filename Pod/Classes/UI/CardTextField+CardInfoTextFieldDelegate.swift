@@ -67,15 +67,16 @@ extension CardTextField: CardInfoTextFieldDelegate {
         if !expirationDateIsValid() {
             let invalidInputColor = self.invalidInputColor ?? UIColor.red
             // if the expiration date text fields haven't been assigned invalid input color
-            if monthTextField?.textColor != invalidInputColor && yearTextField?.textColor != invalidInputColor {
-                monthTextField?.textColor = invalidInputColor
-                yearTextField?.textColor = invalidInputColor
-
+            if layer.borderColor != invalidInputColor.cgColor {
+//                monthTextField?.textColor = invalidInputColor
+//                yearTextField?.textColor = invalidInputColor
+                layer.borderColor = invalidInputColor.cgColor
                 addDateInvalidityObserver()
             }
         } else {
-            monthTextField?.textColor = numberInputTextField?.textColor ?? UIColor.black
-            yearTextField?.textColor = numberInputTextField?.textColor ?? UIColor.black
+//            monthTextField?.textColor = numberInputTextField?.textColor ?? UIColor.black
+//            yearTextField?.textColor = numberInputTextField?.textColor ?? UIColor.black
+            layer.borderColor = UIColor(red: 128.0 / 255.0, green: 74.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0).cgColor
         }
     }
 
@@ -93,6 +94,12 @@ extension CardTextField: CardInfoTextFieldDelegate {
      - returns: The validity of the entered expiration date.
      */
     private func expirationDateIsValid() -> Bool {
+        if card.expiryDate.rawValue.timeIntervalSinceNow > 0 {
+            if cardType?.validate(expiry: card.expiryDate) == CardValidationResult.InvalidExpiry {
+                return false
+            }
+            return true
+        }
         return card.expiryDate == Expiry.invalid || card.expiryDate.rawValue.timeIntervalSinceNow > 0
     }
 

@@ -100,7 +100,7 @@ open class NumberInputTextField: StylizedTextField {
         let newTextUnformatted = cardNumberFormatter.unformat(cardNumber: newTextFormatted)
         
         // Set the text color to invalid - this will be changed to `validTextColor` later in this method if the input was valid
-        super.textColor = invalidInputColor
+//        super.textColor = invalidInputColor
         
         if !newTextUnformatted.isEmpty && !newTextUnformatted.isNumeric() {
             return false
@@ -118,7 +118,7 @@ open class NumberInputTextField: StylizedTextField {
             // If the card number is already valid, should call numberInputTextFieldDidComplete on delegate
             // then set the text color back to normal and return
             numberInputTextFieldDelegate?.numberInputTextFieldDidComplete(self)
-            super.textColor = _textColor
+//            super.textColor = _textColor
             return false
         } else {
             notifyNumberInvalidity()
