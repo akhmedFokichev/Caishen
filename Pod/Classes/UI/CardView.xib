@@ -45,9 +45,12 @@
                             <rect key="frame" x="0.0" y="0.0" width="360" height="892"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="MM " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cX-Z5-afy" customClass="MonthInputTextField" customModule="Caishen" customModuleProvider="target">
-                                    <rect key="frame" x="150" y="0.0" width="34" height="892"/>
+                                    <rect key="frame" x="149.5" y="0.0" width="38.5" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <accessibility key="accessibilityConfiguration" label="Expiration Month"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="37" id="eom-WF-6RI"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -71,7 +74,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ГГ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgE-Em-qHJ" customClass="YearInputTextField" customModule="Caishen" customModuleProvider="target">
-                                    <rect key="frame" x="190" y="0.0" width="37" height="892"/>
+                                    <rect key="frame" x="192" y="0.0" width="37" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <accessibility key="accessibilityConfiguration" label="Expiration Year"/>
                                     <constraints>
@@ -92,8 +95,8 @@
                                 <constraint firstItem="5cX-Z5-afy" firstAttribute="centerY" secondItem="DD8-kX-0ru" secondAttribute="centerY" id="gPj-h0-kbB"/>
                                 <constraint firstItem="CgE-Em-qHJ" firstAttribute="leading" secondItem="DD8-kX-0ru" secondAttribute="trailing" constant="5" id="mqG-6S-dv0"/>
                                 <constraint firstItem="HOM-PC-B5m" firstAttribute="top" secondItem="8iN-aK-Jz9" secondAttribute="top" id="pKk-pg-dWg"/>
-                                <constraint firstItem="5cX-Z5-afy" firstAttribute="centerY" secondItem="8iN-aK-Jz9" secondAttribute="centerY" constant="-12" id="xCX-AH-Opc"/>
-                                <constraint firstItem="DD8-kX-0ru" firstAttribute="leading" secondItem="5cX-Z5-afy" secondAttribute="trailing" constant="-5" id="yCR-Mr-RWe"/>
+                                <constraint firstItem="5cX-Z5-afy" firstAttribute="centerY" secondItem="8iN-aK-Jz9" secondAttribute="centerY" constant="-15" id="xCX-AH-Opc"/>
+                                <constraint firstItem="DD8-kX-0ru" firstAttribute="leading" secondItem="5cX-Z5-afy" secondAttribute="trailing" constant="-12" id="yCR-Mr-RWe"/>
                             </constraints>
                         </view>
                     </subviews>
