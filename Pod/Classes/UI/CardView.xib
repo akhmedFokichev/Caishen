@@ -34,7 +34,7 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0000000000000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6o-6e-fLS" customClass="NumberInputTextField" customModule="Caishen" customModuleProvider="target">
                             <rect key="frame" x="4" y="0.0" width="336" height="892"/>
-                            <accessibility key="accessibilityConfiguration" label="Card Number"/>
+                            <accessibility key="accessibilityConfiguration" identifier="numberField" label="Card Number"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
@@ -45,9 +45,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="360" height="892"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="MM " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cX-Z5-afy" customClass="MonthInputTextField" customModule="Caishen" customModuleProvider="target">
-                                    <rect key="frame" x="149.5" y="0.0" width="38.5" height="892"/>
+                                    <rect key="frame" x="156" y="0.0" width="37" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <accessibility key="accessibilityConfiguration" label="Expiration Month"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="monthField" label="Expiration Month"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="37" id="eom-WF-6RI"/>
                                     </constraints>
@@ -66,7 +66,7 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVV" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOM-PC-B5m" customClass="CVCInputTextField" customModule="Caishen" customModuleProvider="target">
                                     <rect key="frame" x="316" y="0.0" width="44" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <accessibility key="accessibilityConfiguration" label="Card Verification Code"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="cvvField" label="Card Verification Code"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="Z3Z-ms-ahg"/>
                                     </constraints>
@@ -76,7 +76,7 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ГГ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgE-Em-qHJ" customClass="YearInputTextField" customModule="Caishen" customModuleProvider="target">
                                     <rect key="frame" x="192" y="0.0" width="37" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <accessibility key="accessibilityConfiguration" label="Expiration Year"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="yearField" label="Expiration Year"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="37" id="lHt-lR-abB"/>
                                     </constraints>
