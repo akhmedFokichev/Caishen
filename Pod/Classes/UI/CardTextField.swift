@@ -360,10 +360,10 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
         // and can be set in a Nib.
         if isRightToLeftLanguage {
             cvcTextField.textAlignment = .left
-            monthTextField.textAlignment = .left
+            monthTextField.textAlignment = .right
         } else {
             cvcTextField.textAlignment = .left
-            monthTextField.textAlignment = .left
+            monthTextField.textAlignment = .right
         }
         
         let textFields: [UITextField?] = [numberInputTextField, cvcTextField, monthTextField, yearTextField]

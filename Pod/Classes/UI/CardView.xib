@@ -45,7 +45,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="360" height="892"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="MM " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cX-Z5-afy" customClass="MonthInputTextField" customModule="Caishen" customModuleProvider="target">
-                                    <rect key="frame" x="144" y="0.0" width="37" height="892"/>
+                                    <rect key="frame" x="140" y="0.0" width="37" height="892"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <accessibility key="accessibilityConfiguration" identifier="monthField" label="Expiration Month"/>
                                     <constraints>
@@ -95,7 +95,7 @@
                                 <constraint firstItem="5cX-Z5-afy" firstAttribute="centerY" secondItem="DD8-kX-0ru" secondAttribute="centerY" id="gPj-h0-kbB"/>
                                 <constraint firstItem="CgE-Em-qHJ" firstAttribute="leading" secondItem="DD8-kX-0ru" secondAttribute="trailing" constant="5" id="mqG-6S-dv0"/>
                                 <constraint firstItem="HOM-PC-B5m" firstAttribute="top" secondItem="8iN-aK-Jz9" secondAttribute="top" id="pKk-pg-dWg"/>
-                                <constraint firstItem="DD8-kX-0ru" firstAttribute="leading" secondItem="5cX-Z5-afy" secondAttribute="trailing" id="yCR-Mr-RWe"/>
+                                <constraint firstItem="DD8-kX-0ru" firstAttribute="leading" secondItem="5cX-Z5-afy" secondAttribute="trailing" constant="4" id="yCR-Mr-RWe"/>
                             </constraints>
                         </view>
                     </subviews>
