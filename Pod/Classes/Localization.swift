@@ -12,6 +12,8 @@ import Foundation
  Enum to provide constants for localized strings in caishen, as well as convenience methods to localize the respective strings.
  */
 internal enum Localization: String {
+    
+    
     case StringsFileName = "Localizable"
     case AccessoryButtonAccessibilityLabel = "ACCESSORY_BUTTON_ACCESSIBILITY_LABEL"
     case NumberInputTextFieldAccessibilityLabel = "NUMBER_INPUT_TEXTFIELD_ACCESSIBILITY_LABEL"
