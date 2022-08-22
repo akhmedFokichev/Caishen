@@ -19,6 +19,8 @@ public struct JCB: CardType {
     
     public let identifyingDigits = Set(3528...3589).union(Set([3088, 3096, 3112, 3158, 3337]) )
 
+    public var requiresExpiry = true
+    
     public init() {
         
     }

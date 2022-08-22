@@ -19,6 +19,8 @@ public struct Discover: CardType {
     
     public let identifyingDigits = Set(622126...622925).union(Set(644...649)).union(Set([6011])).union(Set([65]))
 
+    public var requiresExpiry = true
+    
     public init() {
         
     }

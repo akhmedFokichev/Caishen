@@ -19,6 +19,8 @@ public struct Visa: CardType {
     
     public let identifyingDigits = Set([4])
 
+    public var requiresExpiry = true
+    
     public init() {
         
     }

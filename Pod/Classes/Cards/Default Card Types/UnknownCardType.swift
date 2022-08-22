@@ -14,7 +14,8 @@ public struct UnknownCardType: CardType {
     public let name = "Unknown"
     public let CVCLength = 0
     public let identifyingDigits: Set<Int> = []
-
+    public var requiresExpiry = true
+    
     public func validate(number: Number) -> CardValidationResult {
         return CardValidationResult.UnknownType
             .union(lengthMatchesType(number.length))

@@ -73,7 +73,7 @@ public protocol CardType {
      Setting this value to false will hide the month and year text field from the `CardTextField` and remove the required
      validation routine.
      */
-    var requiresExpiry: Bool { get }
+    var requiresExpiry: Bool { get set }
 
     /**
      Validates the card number.
@@ -109,10 +109,6 @@ extension CardType {
     
     public func isEqual(to cardType: CardType) -> Bool {
         return cardType.name == self.name
-    }
-    
-    public var requiresExpiry: Bool {
-        return true
     }
     
     public var requiresCVC: Bool {

@@ -19,6 +19,8 @@ public struct MasterCard: CardType {
 
     public let identifyingDigits = Set(51...55).union(2221...2720)
 
+    public var requiresExpiry = true
+    
     public init() {
         
     }

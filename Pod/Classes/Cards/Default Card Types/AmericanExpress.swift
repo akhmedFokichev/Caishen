@@ -21,6 +21,8 @@ public struct AmericanExpress: CardType {
 
     public let identifyingDigits = Set([34, 37])
 
+    public var requiresExpiry = true
+    
     public init() {
 
     }

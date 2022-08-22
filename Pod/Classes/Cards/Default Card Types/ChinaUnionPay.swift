@@ -19,6 +19,8 @@ public struct ChinaUnionPay: CardType {
     
     public let identifyingDigits = Set([62])
     
+    public var requiresExpiry: Bool = true
+    
     public init() {
         
     }
