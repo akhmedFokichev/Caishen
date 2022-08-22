@@ -158,6 +158,9 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
     /**
      The currently entered card values. Note that the values are not guaranteed to be valid.
      */
+    
+    private(set) var requiresExpiry: Bool?
+    
     open var card: Card {
         get {
             let cardNumber = numberInputTextField.cardNumber
@@ -168,6 +171,10 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
 
             return Card(number: cardNumber, cvc: cardCVC, expiry: cardExpiry)
         }
+    }
+    
+    public func setIsRequiresExpiry(_ value: Bool) {
+        requiresExpiry = value
     }
     
     /**
@@ -211,7 +218,11 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
             return nil
         }
         
-        return cardTypeRegister.cardType(for: number)
+        var _cardType = cardTypeRegister.cardType(for: number)
+        if let requiresExpiry = requiresExpiry {
+            _cardType.requiresExpiry = requiresExpiry
+        }
+        return _cardType
     }
     
     internal var hideExpiryTextFields: Bool = false {
@@ -336,7 +347,7 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
      */
     private func setupTextFieldAttributes() {
         numberInputTextField?.cardNumberSeparator = cardNumberSeparator ?? " - "
-        numberInputTextField?.placeholder = placeholder        
+        numberInputTextField?.placeholder = placeholder
         cvcTextField?.deleteBackwardCallback = { [weak self] _ in
             if self?.hideExpiryTextFields == true {
                 self?.numberInputTextField.becomeFirstResponder()
@@ -527,7 +538,7 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
     public func numberInputIsInFocus(_ textField: UITextField) {
         cardTextFieldDelegate?.cardTextFieldActiveField(textField)
     }
-    // MARK: - Card 
+    // MARK: - Card
     
     /**
      Displays the card image for the currently detected card type in the card text field's `cardImageView`.
@@ -611,7 +622,7 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
     }
     
     open override func becomeFirstResponder() -> Bool {
-        // Return false if any of this text field's subviews is already first responder. 
+        // Return false if any of this text field's subviews is already first responder.
         // Otherwise let `numberInputTextField` become the first responder.
         super.becomeFirstResponder()
         super.resignFirstResponder()
