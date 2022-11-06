@@ -94,7 +94,9 @@ extension CardTextField: CardInfoTextFieldDelegate {
      - returns: The validity of the entered expiration date.
      */
     private func expirationDateIsValid() -> Bool {
-        if card.expiryDate.rawValue.timeIntervalSinceNow > 0 {
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from: "2022-01-01T00:01:00+0000") ?? Date()
+        if card.expiryDate.rawValue > date {
             if cardType?.validate(expiry: card.expiryDate) == CardValidationResult.InvalidExpiry {
                 return false
             }
