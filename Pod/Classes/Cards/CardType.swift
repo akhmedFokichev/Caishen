@@ -212,7 +212,12 @@ extension CardType {
      
      - returns: The number of digits that are contained in a card number of card type `self`.
      */
-    public func expectedCardNumberLength() -> Int {
+    public func expectedCardNumberLength(_ length: Int) -> Int {
+        let numberGroupingCount = numberGrouping.reduce(0, {$0 + $1})
+        if numberGroupingCount == 19, length == 16 {
+           return 16
+        }
+        
         return numberGrouping.reduce(0, {$0 + $1})
     }
 
@@ -306,7 +311,7 @@ extension CardType {
         - `.NumberDoesNotMatchType`:    The card number's Issuer Identification Number does not match `self`
      */
     public func lengthMatchesType(_ length: Int) -> CardValidationResult {
-        return testLength(length, assumingLength: expectedCardNumberLength())
+        return testLength(length, assumingLength: expectedCardNumberLength(length))
     }
 
     /**
