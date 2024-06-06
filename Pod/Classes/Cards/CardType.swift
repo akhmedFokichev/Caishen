@@ -66,7 +66,7 @@ public protocol CardType {
      A boolean flag that indicates whether CVC validation is required for this card type or not.
      Setting this value to false will hide the CVC text field from the `CardTextField` and remove the required validation routine.
      */
-    var requiresCVC: Bool { get }
+    var requiresCVC: Bool { get set }
 
     /**
      A boolean flag that indicates whether expiry validation is required for this card type or not.

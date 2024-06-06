@@ -161,6 +161,8 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
     
     private(set) var requiresExpiry: Bool?
     
+    public var requiresCVC: Bool?
+    
     open var card: Card {
         get {
             let cardNumber = numberInputTextField.cardNumber
@@ -222,6 +224,10 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
         if let requiresExpiry = requiresExpiry {
             _cardType.requiresExpiry = requiresExpiry
         }
+        if let requiresCVC {
+            _cardType.requiresCVC = requiresCVC
+        }
+        
         return _cardType
     }
     
@@ -516,7 +522,12 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
         showCardImage()
         notifyDelegate()
         hideExpiryTextFields = !cardTypeRegister.cardType(for: numberInputTextField.cardNumber).requiresExpiry
-        hideCVCTextField = !cardTypeRegister.cardType(for: numberInputTextField.cardNumber).requiresCVC
+        
+        if let requiresCVC {
+            hideCVCTextField = !requiresCVC
+        } else {
+            hideCVCTextField = !cardTypeRegister.cardType(for: numberInputTextField.cardNumber).requiresCVC
+        }
     }
     
     open func numberInputTextFieldDidComplete(_ numberInputTextField: NumberInputTextField) {
@@ -525,7 +536,13 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
         
         notifyDelegate()
         hideExpiryTextFields = !cardTypeRegister.cardType(for: numberInputTextField.cardNumber).requiresExpiry
-        hideCVCTextField = !cardTypeRegister.cardType(for: numberInputTextField.cardNumber).requiresCVC
+
+        if let requiresCVC {
+            hideCVCTextField = !requiresCVC
+        } else {
+            hideCVCTextField = !cardTypeRegister.cardType(for: numberInputTextField.cardNumber).requiresCVC
+        }
+        
         if hideExpiryTextFields && hideCVCTextField || !isChildFirstResponder {
             return
         } else if hideExpiryTextFields {

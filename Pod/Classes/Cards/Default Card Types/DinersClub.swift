@@ -12,6 +12,7 @@ import UIKit
  *  The native supported card type of Diners Club
  */
 public struct DinersClub: CardType {
+
     public let name = "Diners Club"
     
     public let CVCLength = 3
@@ -21,6 +22,8 @@ public struct DinersClub: CardType {
     public let identifyingDigits = Set(300...305).union( Set([36, 38, 39, 309, 2014, 2149]) )
 
     public var requiresExpiry = true
+    
+    public var requiresCVC = true
     
     public init() {
 

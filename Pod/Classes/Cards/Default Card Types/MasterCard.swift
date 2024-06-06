@@ -21,6 +21,8 @@ public struct MasterCard: CardType {
 
     public var requiresExpiry = true
     
+    public var requiresCVC = true
+    
     public init() {
         
     }

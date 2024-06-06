@@ -23,6 +23,8 @@ public struct AmericanExpress: CardType {
 
     public var requiresExpiry = true
     
+    public var requiresCVC = true
+    
     public init() {
 
     }

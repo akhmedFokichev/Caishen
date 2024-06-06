@@ -21,6 +21,8 @@ public struct ChinaUnionPay: CardType {
     
     public var requiresExpiry: Bool = true
     
+    public var requiresCVC = true
+    
     public init() {
         
     }
